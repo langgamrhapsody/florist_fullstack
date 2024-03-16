@@ -9,11 +9,19 @@ export async function middleware(req: NextRequest, res: NextResponse) {
 
   req.headers.set("Authorization", `Bearer ${jwt}`);
 
-  NextResponse.next({
+  const response = NextResponse.next({
     request: {
       headers: req.headers,
     },
   });
+
+  if (jwt) {
+    response.cookies.set({ name: "isLoggedIn", value: "true", path: "/" });
+  } else {
+    response.cookies.set({ name: "isLoggedIn", value: "false", path: "/" });
+  }
+
+  return response;
 }
 
 export const config = {

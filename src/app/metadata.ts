@@ -1,3 +1,4 @@
+import Strings from "@/constants/strings";
 import { Metadata } from "next";
 
 const keywords = [
@@ -35,7 +36,7 @@ const keywords = [
 ];
 
 export const lefloriareMetaData: Metadata = {
-  title: "Lefloriare",
-  description: "Blooms your day",
+  title: Strings.general.title,
+  description: Strings.general.description,
   keywords: keywords,
 };
