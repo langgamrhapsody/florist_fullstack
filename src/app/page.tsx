@@ -1,4 +1,4 @@
-import Navbar from "@/components/navigations/navbar";
+import Navbar from "../components/navigations/navbar";
 import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import { cookies } from "next/headers";
 
