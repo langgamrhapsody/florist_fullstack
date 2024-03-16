@@ -1,4 +1,4 @@
-import Strings from "@/constants/strings";
+import Strings from "../constants/strings";
 import { Metadata } from "next";
 
 const keywords = [

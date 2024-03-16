@@ -4,9 +4,9 @@ import Link from "next/link";
 import { Montserrat } from "next/font/google";
 import { Bars3Icon, UserCircleIcon, UserIcon } from "@heroicons/react/20/solid";
 import SideNav from "./dropnav";
-import Strings from "@/constants/strings";
+import Strings from "../../constants/strings";
 import SocialMediaComponents from "./socialmedia";
-import { splitStringIntoTwo } from "@/utils/config";
+import { splitStringIntoTwo } from "../../utils/config";
 
 type NavbarProps = {
   isLoggedIn: boolean;

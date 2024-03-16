@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FC } from "react";
-import { Whatsapp, Instagram, TikTok } from "@/components/svgs";
+import { Whatsapp, Instagram, TikTok } from "../svgs";
 import Tiktok from "../svgs/tiktok";
 
 type SocialComponents = {
