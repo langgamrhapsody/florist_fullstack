@@ -12,7 +12,7 @@ const SocialMediaComponents: FC<SocialComponents> = ({ style }) => {
     {
       id: 1,
       label: "whatsapp",
-      link: "https://wa.me/6281238648127",
+      link: "https://wa.me/6281338648127",
     },
     {
       id: 2,
