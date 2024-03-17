@@ -2,7 +2,6 @@
 
 import React, { FC } from "react";
 import { Whatsapp, Instagram, TikTok } from "../svgs";
-import Tiktok from "../svgs/tiktok";
 
 type SocialComponents = {
   style: string;
@@ -43,7 +42,7 @@ const SocialMediaComponents: FC<SocialComponents> = ({ style }) => {
       case "tiktok":
         return (
           <a key={item.id} className={style} href={item.link} target="_blank">
-            <Tiktok key={item.id} />
+            <TikTok key={item.id} />
           </a>
         );
       default:
