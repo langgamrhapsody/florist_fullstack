@@ -15,6 +15,7 @@ type NavbarProps = {
 const Navbar = ({ isLoggedIn }: NavbarProps) => {
   const right_nav: string[] = splitStringIntoTwo(Strings.general.right_nav);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isTopPage, setIsTopPage] = useState<boolean>(false);
   const [scrollingDown, setScrollingDown] = useState<boolean>(false);
   const lastScrollY = useRef<number>(0);
 
@@ -25,11 +26,19 @@ const Navbar = ({ isLoggedIn }: NavbarProps) => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+
+      if (window.scrollY > 32) {
+        setIsTopPage(false);
+      } else {
+        setIsTopPage(true);
+      }
+
       if (currentScrollY > lastScrollY.current) {
         setScrollingDown(true);
       } else {
         setScrollingDown(false);
       }
+
       lastScrollY.current = currentScrollY;
     };
 
@@ -75,14 +84,26 @@ const Navbar = ({ isLoggedIn }: NavbarProps) => {
         className={`relative z-[98] w-full h-[60px] md:h-[80px] border-b  px-[5%]  transition-all ease-in-out duration-1000 ${
           isOpen ? "bg-white" : "bg-transparent"
         } ${
+          isTopPage
+            ? "bg-transparent"
+            : "bg-white md:bg-transparent drop-shadow-md  md:drop-shadow-none"
+        } ${
           !isOpen && scrollingDown
-            ? "max-h-[0] py-0 border-transparent"
-            : "max-h-[100px] py-4 border-black "
+            ? "md:max-h-[0] md:py-0 md:border-transparent"
+            : "md:max-h-[100px] md:py-4 md:border-black "
         } `}
       >
+        <div className="md:hidden relative flex w-full h-full justify-center items-center">
+          <h1
+            onClick={toggleNav}
+            className=" font-semibold text-2xl cursor-pointer "
+          >
+            {Strings.general.title}
+          </h1>
+        </div>
         <div
-          className={`md:grid md:grid-cols-4 h-full md:divide-x-2 divide-black place-items-center transition-all ease-in-out duration-500 ${
-            !isOpen && scrollingDown ? "opacity-0 hidden" : "opacity-100 "
+          className={` hidden md:grid md:grid-cols-4 h-full md:divide-x-2 divide-black place-items-center transition-all ease-in-out duration-500 ${
+            !isOpen && scrollingDown ? "md:opacity-0 hidden" : "md:opacity-100 "
           }`}
         >
           <div className="hidden md:flex w-full h-full justify-end items-center pr-10">

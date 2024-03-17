@@ -1,6 +1,8 @@
 import { getJWTSSR } from "@/utils/helpers/ssrHelpers";
 import Navbar from "../components/navigations/navbar";
 import Strings from "@/utils/constants/strings";
+import LottieAnimation from "@/components/lottie/lottie";
+import flower from "../components/lottie/Flower.json";
 
 export default function LandingPage() {
   const jwt = getJWTSSR();
@@ -9,17 +11,23 @@ export default function LandingPage() {
   return (
     <>
       <Navbar isLoggedIn={isLoggedIn} />
-      <div className=" pt-10 2xl:pt-[60px] grid grid-cols-2 px-10 lg:max-w-[1280px] m-auto place-items-center">
-        <div className="">
-          <p className="text-[40px] text-balance px-4 text-center">
+      <div className=" pt-[60px] md:pt-[40px] 2xl:pt-[60px] flex flex-col-reverse md:flex-row px-16 md:px-10 gap-10 md:gap-0 lg:max-w-[1280px] m-auto place-items-center">
+        <div className="w-full md:w-1/2 -mb-10">
+          <p className=" md:hidden text-2xl leading-relaxed lg:text-[2.5rem] text-balance px-4 text-center -mb-10">
             {Strings.general.home_st}
             <br></br>
             {Strings.general.home_nd}
             <br></br>
             {Strings.general.home_rd}
           </p>
+
+          <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[350px] lg:h-[350px] mx-auto">
+            <LottieAnimation animationData={flower} />
+          </div>
         </div>
-        <img src="/assets/img/home.jpg" alt="home.jpg" className="w-full" />
+        <div className="w-full md:w-1/2">
+          <img src="/assets/img/home.jpg" alt="home.jpg" className="w-full" />
+        </div>
       </div>
     </>
   );
