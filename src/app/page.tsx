@@ -13,7 +13,7 @@ export default function LandingPage() {
       <Navbar isLoggedIn={isLoggedIn} />
       <div className=" pt-[60px] md:pt-[40px] 2xl:pt-[60px] flex flex-col-reverse md:flex-row px-16 md:px-10 gap-10 md:gap-0 lg:max-w-[1280px] m-auto place-items-center">
         <div className="w-full md:w-1/2 -mb-10">
-          <p className=" md:hidden text-2xl leading-relaxed lg:text-[2.5rem] text-balance px-4 text-center -mb-10">
+          <p className=" text-2xl leading-relaxed lg:text-[2.5rem] text-balance px-4 text-center -mb-10">
             {Strings.general.home_st}
             <br></br>
             {Strings.general.home_nd}
