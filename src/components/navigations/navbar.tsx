@@ -4,9 +4,9 @@ import Link from "next/link";
 import { Montserrat } from "next/font/google";
 import { Bars3Icon, UserCircleIcon, UserIcon } from "@heroicons/react/20/solid";
 import SideNav from "./dropnav";
-import Strings from "../../constants/strings";
+import Strings from "../../utils/constants/strings";
 import SocialMediaComponents from "./socialmedia";
-import { splitStringIntoTwo } from "../../utils/config";
+import { splitStringIntoTwo } from "../../utils/helpers/helpers";
 
 type NavbarProps = {
   isLoggedIn: boolean;
@@ -52,11 +52,13 @@ const Navbar = ({ isLoggedIn }: NavbarProps) => {
     <div id="nav" className="fixed z-[100] w-full">
       <div
         id="first"
-        className={`relative z-[98] hidden md:flex w-full  justify-between items-center h-[60px] border-b border-black bg-transparent px-[2%]   transition-all ease-in-out duration-300 `}
+        className={`relative z-[98] hidden md:flex w-full  justify-between items-center h-[40px] 2xl:h-[60px] border-b border-black bg-transparent px-[2%]   transition-all ease-in-out duration-1000 ${
+          isOpen ? "bg-white" : "bg-transparent"
+        } `}
       >
         <Bars3Icon onClick={toggleNav} className="w-6 h-6 cursor-pointer" />
         <h1
-          className={`hidden md:block font-semibold text-lg transition-all ease-in-out duration-500 ${
+          className={`hidden md:block font-semibold text-lg transition-all ease-in-out duration-1000 ${
             scrollingDown ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -70,15 +72,19 @@ const Navbar = ({ isLoggedIn }: NavbarProps) => {
       </div>
       <div
         id="second"
-        className={`relative z-[98] w-full h-[60px] md:h-[80px] border-b border-black px-[5%] py-4  transition-all ease-in-out duration-500 ${
+        className={`relative z-[98] w-full h-[60px] md:h-[80px] border-b  px-[5%]  transition-all ease-in-out duration-1000 ${
           isOpen ? "bg-white" : "bg-transparent"
         } ${
           !isOpen && scrollingDown
-            ? "max-h-[0] opacity-0"
-            : "max-h-[100px] opacity-100"
+            ? "max-h-[0] py-0 border-transparent"
+            : "max-h-[100px] py-4 border-black "
         } `}
       >
-        <div className="md:grid md:grid-cols-4 h-full md:divide-x-2 divide-black place-items-center">
+        <div
+          className={`md:grid md:grid-cols-4 h-full md:divide-x-2 divide-black place-items-center transition-all ease-in-out duration-500 ${
+            !isOpen && scrollingDown ? "opacity-0 hidden" : "opacity-100 "
+          }`}
+        >
           <div className="hidden md:flex w-full h-full justify-end items-center pr-10">
             <p className=" text-wrap text-center w-[90px] text-[9px] uppercase font-semibold tracking-widest leading-4 font-montserrat">
               {Strings.general.left_nav}

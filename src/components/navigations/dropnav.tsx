@@ -1,6 +1,6 @@
 "use client";
-import Strings from "../../constants/strings";
-import { formatNumber } from "../../utils/config";
+import Strings from "../../utils/constants/strings";
+import { formatNumber } from "../../utils/helpers/helpers";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import SocialMediaComponents from "./socialmedia";

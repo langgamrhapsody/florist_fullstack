@@ -1,15 +1,26 @@
+import { getJWTSSR } from "@/utils/helpers/ssrHelpers";
 import Navbar from "../components/navigations/navbar";
-import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
-import { cookies } from "next/headers";
+import Strings from "@/utils/constants/strings";
 
 export default function LandingPage() {
-  const cookie = cookies().get("isLoggedIn") as RequestCookie;
-  const isLoggedIn = cookie.value === "true" ? true : false;
+  const jwt = getJWTSSR();
+  const isLoggedIn = !!jwt ? true : false;
+
   return (
     <>
       <Navbar isLoggedIn={isLoggedIn} />
-      <main className="bg-slate-500 min-h-screen"></main>
-      <div className="min-h-screen bg-green-400">hi</div>
+      <div className=" pt-10 2xl:pt-[60px] grid grid-cols-2 px-10 lg:max-w-[1280px] m-auto place-items-center">
+        <div className="">
+          <p className="text-[40px] text-balance px-4 text-center">
+            {Strings.general.home_st}
+            <br></br>
+            {Strings.general.home_nd}
+            <br></br>
+            {Strings.general.home_rd}
+          </p>
+        </div>
+        <img src="/assets/img/home.jpg" alt="home.jpg" className="w-full" />
+      </div>
     </>
   );
 }

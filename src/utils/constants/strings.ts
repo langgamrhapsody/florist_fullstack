@@ -7,6 +7,9 @@ export default class Strings {
     left_nav: "Blooms Your Days Since",
     year: "2024",
     right_nav: "Show us some love",
+    home_st: "Perfect Picks",
+    home_nd: "Brings Floral Delights",
+    home_rd: "For Every Occasion",
   };
 
   static readonly auth = {

@@ -1,4 +1,4 @@
-import Strings from "../../constants/strings";
+import Strings from "../../utils/constants/strings";
 import * as Yup from "yup";
 
 const loginValidation = Yup.object({

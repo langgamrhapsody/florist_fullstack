@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getJWT } from "../../utils/config";
+import { getJWT } from "../../utils/helpers/helpers";
 
 const axiosInstance = axios.create();
 
