@@ -3,30 +3,90 @@ import Navbar from "../components/navigations/navbar";
 import Strings from "@/utils/constants/strings";
 import LottieAnimation from "@/components/lottie/lottie";
 import flower from "../components/lottie/Flower.json";
+import { formatToIDR } from "@/utils/helpers/helpers";
+import Showcase, { IShowcase } from "@/components/products/showcase";
 
 export default function LandingPage() {
   const jwt = getJWTSSR();
   const isLoggedIn = !!jwt ? true : false;
 
+  const showcaseItems: IShowcase[] = [
+    {
+      id: 1,
+      alt: "Sabrina",
+      name: "Sabrina",
+      price: 500000,
+      isSale: false,
+    },
+    {
+      id: 2,
+      alt: "Ellie",
+      name: "Ellie",
+      price: 250000,
+      isSale: true,
+    },
+    {
+      id: 3,
+      alt: "Karen",
+      name: "Karen",
+      price: 400000,
+      isSale: false,
+    },
+    {
+      id: 4,
+      alt: "Ann",
+      name: "Ann",
+      price: 300000,
+      isSale: true,
+    },
+  ];
   return (
     <>
       <Navbar isLoggedIn={isLoggedIn} />
-      <div className=" pt-[60px] md:pt-[40px] 2xl:pt-[60px] flex flex-col-reverse md:flex-row px-16 md:px-10 gap-10 md:gap-0 lg:max-w-[1280px] m-auto place-items-center">
-        <div className="w-full md:w-1/2 -mb-10">
-          <p className=" text-2xl leading-relaxed lg:text-[2.5rem] text-balance px-4 text-center -mb-10">
-            {Strings.general.home_st}
-            <br></br>
-            {Strings.general.home_nd}
-            <br></br>
-            {Strings.general.home_rd}
-          </p>
+      <div className="flex flex-col gap-12  lg:max-w-[1400px]  m-auto">
+        {/* ------------ HOME ------------  */}
+        <div className=" pt-[60px] md:pt-[40px] 2xl:pt-[60px] flex flex-col-reverse md:flex-row px-16 md:px-10 gap-10 md:gap-0 place-items-center">
+          <div className="w-full md:w-1/2 -mb-10">
+            <p className=" text-2xl leading-relaxed lg:text-[2.5rem] text-balance px-4 text-center -mb-10">
+              {Strings.general.home_st}
+              <br></br>
+              {Strings.general.home_nd}
+              <br></br>
+              {Strings.general.home_rd}
+            </p>
 
-          <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[350px] lg:h-[350px] mx-auto">
-            <LottieAnimation animationData={flower} />
+            <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[350px] lg:h-[350px] mx-auto">
+              <LottieAnimation animationData={flower} />
+            </div>
+          </div>
+          <div className="w-full md:w-1/2">
+            <img src="/assets/img/home.jpg" alt="home.jpg" className="w-full" />
           </div>
         </div>
-        <div className="w-full md:w-1/2">
-          <img src="/assets/img/home.jpg" alt="home.jpg" className="w-full" />
+        {/* ------------ BEST SELLER ------------  */}
+        <div className=" flex flex-col px-16 md:px-10 py-8 ">
+          <div className="flex gap-5 lg:gap-2 w-full items-center sm:px-10">
+            <div className="w-8/12 sm:w-10/12">
+              <div className="w-full h-[1px] bg-black ml-auto transition-all ease-in-out duration-1000 group-hover:w-full"></div>
+            </div>
+            <div className="w-4/12 sm:w-2/12  lg:pl-12">
+              <p className="text-lg">{Strings.general.best_seller}</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[40px] sm:px-10  py-8 ">
+            {showcaseItems.map((item) => {
+              return (
+                <Showcase
+                  key={item.id}
+                  alt={item.alt}
+                  id={item.id}
+                  isSale={item.isSale}
+                  name={item.name}
+                  price={item.price}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

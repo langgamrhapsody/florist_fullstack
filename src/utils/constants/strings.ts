@@ -10,6 +10,8 @@ export default class Strings {
     home_st: "Perfect Picks",
     home_nd: "Brings Floral Delights",
     home_rd: "For Every Occasion",
+    sale: "Sale",
+    best_seller: "Best Seller",
   };
 
   static readonly auth = {

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import lottie from "lottie-web";
+import lottie, { AnimationItem } from "lottie-web";
 
 interface LottieAnimationProps {
   animationData: object;
@@ -10,7 +10,7 @@ const LottieAnimation: React.FC<LottieAnimationProps> = ({ animationData }) => {
   const animationContainer = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let animationInstance: any;
+    let animationInstance: AnimationItem;
 
     if (animationContainer.current) {
       animationInstance = lottie.loadAnimation({

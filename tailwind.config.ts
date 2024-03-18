@@ -33,6 +33,7 @@ const config: Config = {
       fontFamily: {
         poppins: ["var(--font-ovo)"],
         montserrat: ["var(--font-montserrat)"],
+        worksans: ["var(--font-worksans)"],
       },
     },
   },

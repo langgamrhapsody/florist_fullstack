@@ -9,6 +9,16 @@ export function formatNumber(n: number): string {
   return n.toString().padStart(2, "0");
 }
 
+export function formatToIDR(amount: number): string {
+  return (
+    new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      minimumFractionDigits: 0,
+    }).format(amount) + " IDR"
+  );
+}
+
 export function splitStringIntoTwo(inputString: string): string[] {
   const words = inputString.split(" ");
   const midPoint = Math.ceil(words.length / 2);
