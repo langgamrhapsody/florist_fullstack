@@ -12,6 +12,9 @@ export default class Strings {
     home_rd: "For Every Occasion",
     sale: "Sale",
     best_seller: "Best Seller",
+    who: "Who is Lefloriare?",
+    who_desc: `Lefloriare: The Rarest Florist, we're artisans passionate about crafting stories through flowers. Founded on love for botanicals, our team creates stunning arrangements that celebrate life's moments. From bespoke bouquets to event designs, Lefloriare transforms spaces and spirits, making every creation a testament to the enchanting power of nature.`,
+    who_button: "Learn More About Us",
   };
 
   static readonly auth = {
