@@ -15,6 +15,11 @@ export default class Strings {
     who: "Who is Lefloriare?",
     who_desc: `Lefloriare: The Rarest Florist, we're artisans passionate about crafting stories through flowers. Founded on love for botanicals, our team creates stunning arrangements that celebrate life's moments. From bespoke bouquets to event designs, Lefloriare transforms spaces and spirits, making every creation a testament to the enchanting power of nature.`,
     who_button: "Learn More About Us",
+    join: "Join the Floriare VIP Member",
+    benefits:
+      "Become a Floriare VIP and stay tune on new products in our store, the freshest floral and of course, enjoy our VIP benefits.",
+    join_button: "Join",
+    benefits_button: "Benefits",
   };
 
   static readonly auth = {

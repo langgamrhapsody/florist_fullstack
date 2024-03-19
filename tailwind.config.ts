@@ -29,9 +29,13 @@ const config: Config = {
           DEFAULT: "#fddfd6",
           // dark: '',
         },
+
+        secondary: {
+          DEFAULT: "#fcf5f0",
+        },
       },
       fontFamily: {
-        poppins: ["var(--font-ovo)"],
+        ovo: ["var(--font-ovo)"],
         montserrat: ["var(--font-montserrat)"],
         worksans: ["var(--font-worksans)"],
       },

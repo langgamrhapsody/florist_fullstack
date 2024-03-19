@@ -62,8 +62,8 @@ const Navbar = ({ isLoggedIn }: NavbarProps) => {
       <div
         id="first"
         className={`relative z-[98] hidden md:flex w-full  justify-between items-center h-[40px] 2xl:h-[60px] border-b border-black bg-transparent px-[2%]   transition-all ease-in-out duration-1000 ${
-          isOpen ? "bg-white" : "bg-transparent"
-        } `}
+          isOpen ? "bg-white bg-opacity-100" : "bg-transparent"
+        } ${scrollingDown ? "bg-white bg-opacity-70" : ""} `}
       >
         <Bars3Icon onClick={toggleNav} className="w-6 h-6 cursor-pointer" />
         <h1
@@ -82,16 +82,17 @@ const Navbar = ({ isLoggedIn }: NavbarProps) => {
       <div
         id="second"
         className={`relative z-[98] w-full h-[60px] md:h-[80px] border-b  px-[5%]  transition-all ease-in-out duration-1000 ${
-          isOpen ? "bg-white" : "bg-transparent"
+          isOpen ? "bg-white bg-opacity-100" : "bg-transparent"
         } ${
           isTopPage
             ? "bg-transparent"
-            : "bg-white md:bg-transparent drop-shadow-md  md:drop-shadow-none"
+            : "bg-white md:bg-white md:bg-opacity-70 drop-shadow-md  md:drop-shadow-none"
         } ${
           !isOpen && scrollingDown
-            ? "md:max-h-[0] md:py-0 md:border-transparent"
-            : "md:max-h-[100px] md:py-4 md:border-black "
-        } `}
+            ? "md:max-h-[0] md:py-0 md:border-transparent "
+            : "md:max-h-[100px] md:py-4 md:border-black bg-white bg-opacity-70 "
+        }
+          `}
       >
         <div className="md:hidden relative flex w-full h-full justify-center items-center">
           <h1
