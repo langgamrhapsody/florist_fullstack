@@ -4,7 +4,7 @@ import "swiper/css/pagination";
 
 import React, { FC } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import ReviewSwiper, { FloristReview } from "./reviewSwiper";
 
 const Swipers: FC<{ data: FloristReview[] }> = ({ data }) => {
@@ -18,7 +18,7 @@ const Swipers: FC<{ data: FloristReview[] }> = ({ data }) => {
       loop={true}
       allowTouchMove={true}
       autoplay={{
-        delay: 1000,
+        delay: 2500,
         disableOnInteraction: false,
       }}
       longSwipesRatio={0.02}
@@ -26,7 +26,7 @@ const Swipers: FC<{ data: FloristReview[] }> = ({ data }) => {
       grabCursor={true}
       watchSlidesProgress={true}
       parallax={true}
-      modules={[Pagination]}
+      modules={[Pagination, Autoplay]}
       initialSlide={middleIndex}
     >
       {datas.map((item, index) => {
