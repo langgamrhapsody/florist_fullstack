@@ -12,7 +12,7 @@ body {
   font-family: var(--font-ovo);
 }
 
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 3px;
   height: 8px;
   background-color: lightgrey;
@@ -28,7 +28,7 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   border-radius: 10px;
   width: 5px;
-} */
+}
 
 .leaderboard::-webkit-scrollbar {
   width: 3px;
@@ -57,4 +57,8 @@ body::-webkit-scrollbar-thumb {
 
 .swiper-pagination-bullet-active {
   background: #fddfd6 !important;
+}
+
+.backface-invisible {
+  backface-visibility: hidden;
 }
