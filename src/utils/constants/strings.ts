@@ -20,6 +20,7 @@ export default class Strings {
       "Become a Floriare VIP and stay tune on new products in our store, the freshest floral and of course, enjoy our VIP benefits.",
     join_button: "Join",
     benefits_button: "Benefits",
+    kind_words: "Kind Words",
   };
 
   static readonly auth = {

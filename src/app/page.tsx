@@ -3,15 +3,52 @@ import Navbar from "../components/navigations/navbar";
 import Strings from "@/utils/constants/strings";
 import LottieAnimation from "@/components/lottie/lottie";
 import flower from "../components/lottie/Flower.json";
-import { formatToIDR } from "@/utils/helpers/helpers";
 import Showcase, { IShowcase } from "@/components/products/showcase";
-import { Tier } from "@/components/svgs";
 import LeaderboardTable from "@/components/leaderboard/table";
-import { ModalProvider } from "@/contexts/modalContext";
+import Swipers from "@/components/swiper/swiper";
+import { FloristReview } from "@/components/swiper/reviewSwiper";
 
 export default function LandingPage() {
   const jwt = getJWTSSR();
   const isLoggedIn = !!jwt ? true : false;
+
+  const lefloriareReviews: FloristReview[] = [
+    {
+      author: "Emily Carter",
+      rating: "★★★★★",
+      title: "A Symphony of Scents and Beauty",
+      review:
+        "From the moment the Lefloriare delivery arrived, my home was transformed into a sanctuary of fragrance and color. The arrangement was nothing short of divine, each flower fresh and vibrant, exuding a natural elegance that took my breath away. The craftsmanship of Lefloriare's florists is evident in every bloom. It's an indulgence I'd recommend to anyone looking to brighten their day or add a touch of luxury to their living space. Absolutely gorgeous!",
+    },
+    {
+      author: "Michael Thompson",
+      rating: "★★★★★",
+      title: "Exceptional Service and Stunning Flowers",
+      review:
+        "Lefloriare Florist has outdone themselves once again! The bouquet I ordered was not only breathtakingly beautiful but also filled the room with an exquisite fragrance that lasted for days. The delivery was prompt, and the flowers were in perfect condition. Their attention to detail and passion for their craft is truly commendable. I highly recommend Lefloriare for any floral needs; they never disappoint!",
+    },
+    {
+      author: "Sophia Loren",
+      rating: "★★★★★",
+      title: "Elegance Redefined",
+      review:
+        "Ordering from Lefloriare Florist was a sheer delight. The arrangement I received was elegantly put together, with each flower showcasing vibrant colors and freshness. The bouquet was not just visually stunning but also had a mesmerizing fragrance that lingered beautifully. Lefloriare's commitment to quality and customer satisfaction is evident. I'm thoroughly impressed and will definitely be a returning customer.",
+    },
+    {
+      author: "James Patterson",
+      rating: "★★★★★",
+      title: "A Floral Masterpiece",
+      review:
+        "I was looking for something special, and Lefloriare Florist delivered just that—a floral masterpiece. The arrangement was sophisticated, with an incredible selection of flowers that seemed to be chosen with utmost care and consideration. It's clear that Lefloriare takes great pride in their work, delivering not just flowers, but an experience. Their service is unparalleled, and I highly recommend them to anyone wanting to make a lasting impression.",
+    },
+    {
+      author: "Isabella Rossi",
+      rating: "★★★★★",
+      title: "Fragrance Heaven",
+      review:
+        "If heaven had a scent, it would be the fragrance of Lefloriare's floral arrangements. Every stem and leaf seemed to be bursting with life, making the bouquet a centerpiece of conversation. The freshness, the gorgeous arrangement, and the delightful scent are all reasons I'll be choosing Lefloriare again. Their professionalism and talent are unmatched. Highly recommend for those who appreciate the finer things in life.",
+    },
+  ];
 
   const showcaseItems: IShowcase[] = [
     {
@@ -157,7 +194,22 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="w-full h-[200px]"></div>
+        <div className="px-2 sm:px-8 md:px-10 sm:py-8">
+          <div className="flex gap-3 md:gap-5 lg:gap-2 w-full justify-between items-center sm:px-10">
+            <div className="w-4/12 md:w-5/12">
+              <div className="w-full h-[1px] bg-black ml-auto transition-all ease-in-out duration-1000 group-hover:w-full"></div>
+            </div>
+            <div className="w-4/12 md:w-2/12 text-center">
+              <p className="text-lg">{Strings.general.kind_words}</p>
+            </div>
+            <div className="w-4/12 md:w-5/12">
+              <div className="w-full h-[1px] bg-black ml-auto transition-all ease-in-out duration-1000 group-hover:w-full"></div>
+            </div>
+          </div>
+          <div className="py-5">
+            <Swipers data={lefloriareReviews} />
+          </div>
+        </div>
       </div>
     </>
   );

@@ -47,3 +47,7 @@ body::-webkit-scrollbar-thumb {
   background-color: lightgrey;
   border-radius: 10px;
 }
+
+.swiper-pagination-bullet-active {
+  background: #fddfd6 !important;
+}

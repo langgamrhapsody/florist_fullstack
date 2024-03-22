@@ -42,7 +42,7 @@ const LeaderboardTable: FC<Leaderboard> = ({ data, heads }) => {
       case 2:
         return "text-yellow-500";
       case 3:
-        return "text-slate-200";
+        return "text-slate-300";
       default:
         return "text-unranked";
     }
