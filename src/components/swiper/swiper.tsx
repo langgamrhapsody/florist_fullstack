@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import React, { FC } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import ReviewSwiper, { FloristReview } from "./reviewSwiper";
+import ReviewSwiper from "./reviewSwiper";
 
 const Swipers: FC<{ data: FloristReview[] }> = ({ data }) => {
   const datas = data;
