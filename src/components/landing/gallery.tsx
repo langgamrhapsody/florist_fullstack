@@ -3,12 +3,12 @@ import React from "react";
 
 const Gallery = () => {
   return (
-    <div className="px-2 sm:px-8 md:px-10 sm:pb-8">
-      <div className="grid grid-cols-4 xl:grid-cols-6 place-items-center pb-8 sm:px-10">
+    <div className=" sm:px-8 md:px-10 sm:pb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 place-items-center justify-between pb-8 px-12 sm:px-10 gap-4">
         {Array.from({ length: 6 }).map((_, index) => (
           <div
             key={index}
-            className="w-[180px] h-[180px] bg-gray-200 flex justify-center items-center overflow-hidden transition-all ease-in-out duration-500 group hover:scale-95"
+            className="w-full h-auto aspect-square bg-gray-200 flex justify-center items-center overflow-hidden transition-all ease-in-out duration-500 group hover:scale-95"
           >
             <img
               src={`/assets/img/best_${index < 4 ? index + 1 : 2}.jpg`}
@@ -18,9 +18,9 @@ const Gallery = () => {
           </div>
         ))}
       </div>
-      <div className="flex gap-3 md:gap-5 lg:gap-2 w-full justify-between items-center sm:px-10">
+      <div className="flex gap-3 md:gap-5 lg:gap-2 w-full justify-between items-center px-12 sm:px-10">
         <div className="w-max">
-          <p className="text-lg">{Strings.general.gallery}</p>
+          <p className=" sm:text-lg">{Strings.general.gallery}</p>
         </div>
         <div className="flex-grow">
           <div className="w-full h-[1px] bg-black ml-auto transition-all ease-in-out duration-1000 group-hover:w-full"></div>
@@ -29,7 +29,7 @@ const Gallery = () => {
           <a
             href="https://www.instagram.com/lefloriare/"
             target="_blank"
-            className="text-lg lowercase"
+            className="sm:text-lg lowercase"
           >
             @{Strings.general.title}
           </a>

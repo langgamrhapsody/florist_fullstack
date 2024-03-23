@@ -107,7 +107,7 @@ export default function LandingPage() {
         <Reviews data={lefloriareReviews} />
         <Gallery />
       </div>
-      {/* <Footer isLoggedIn={isLoggedIn} /> */}
+      <Footer isLoggedIn={isLoggedIn} />
     </>
   );
 }

@@ -6,7 +6,7 @@ import Strings from "@/utils/constants/strings";
 
 const Products: FC<{ showcaseItems: IShowcase[] }> = ({ showcaseItems }) => {
   return (
-    <div className=" flex flex-col px-16 md:px-10 pt-8 ">
+    <div className=" flex flex-col px-12 sm:px-16 md:px-10 pt-8 ">
       <div className="flex gap-5 lg:gap-2 w-full items-center sm:px-10">
         <div className="w-8/12 sm:w-10/12">
           <div className="w-full h-[1px] bg-black ml-auto transition-all ease-in-out duration-1000 group-hover:w-full"></div>

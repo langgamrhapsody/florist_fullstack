@@ -4,15 +4,15 @@ import Strings from "@/utils/constants/strings";
 
 const Reviews: FC<{ data: FloristReview[] }> = ({ data }) => {
   return (
-    <div className="px-2 sm:px-8 md:px-10 sm:pt-8">
-      <div className="flex gap-3 md:gap-5 lg:gap-2 w-full justify-between items-center sm:px-10">
-        <div className="w-4/12 md:w-5/12">
+    <div className=" sm:px-8 md:px-10 sm:pt-8">
+      <div className="flex gap-3 md:gap-5 lg:gap-2 w-full justify-between items-center px-12 sm:px-10">
+        <div className="flex-grow xs:w-4/12 md:w-5/12">
           <div className="w-full h-[1px] bg-black ml-auto transition-all ease-in-out duration-1000 group-hover:w-full"></div>
         </div>
-        <div className="w-4/12 md:w-2/12 text-center">
+        <div className="w-max xs:w-4/12 md:w-2/12 text-center">
           <p className="text-lg">{Strings.general.kind_words}</p>
         </div>
-        <div className="w-4/12 md:w-5/12">
+        <div className="flex-grow xs:w-4/12 md:w-5/12">
           <div className="w-full h-[1px] bg-black ml-auto transition-all ease-in-out duration-1000 group-hover:w-full"></div>
         </div>
       </div>

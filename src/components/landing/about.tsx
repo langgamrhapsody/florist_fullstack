@@ -4,8 +4,8 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className=" flex flex-col px-2 sm:px-8 md:px-10 sm:py-8 ">
-      <div className="  flex flex-col md:flex-row px-16 md:px-10 gap-10 md:gap-0 place-items-center">
+    <div className=" flex flex-col px-0 md:px-10 sm:py-8 ">
+      <div className="  flex flex-col md:flex-row px-12 sm:px-16 md:px-10 gap-10 md:gap-0 place-items-center">
         <div className="w-full md:w-1/2">
           <img src="/assets/img/about.jpg" alt="home.jpg" className="w-full" />
         </div>
