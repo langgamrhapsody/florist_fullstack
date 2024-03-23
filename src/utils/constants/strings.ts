@@ -21,6 +21,8 @@ export default class Strings {
     join_button: "Join",
     benefits_button: "Benefits",
     kind_words: "Kind Words",
+    gallery: "Our Repertoire",
+    news: "Latest News",
   };
 
   static readonly auth = {

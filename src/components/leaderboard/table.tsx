@@ -5,17 +5,6 @@ import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import Modal from "../modals/modal";
 import { ModalProvider, useModal } from "@/contexts/modalContext";
 import TierInfoModal from "../modals/benefitsModal";
-interface Leaderboard {
-  heads: string[];
-  data: LeaderboardData[];
-}
-
-type LeaderboardData = {
-  id: number;
-  name: string;
-  tier: number;
-  points: number;
-};
 
 const LeaderboardTable: FC<Leaderboard> = ({ data, heads }) => {
   const tiers = [

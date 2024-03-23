@@ -9,25 +9,26 @@ type dropNav = {
   closeNav: () => void;
 };
 
+export const menu = [
+  {
+    id: 1,
+    label: Strings.menu.home,
+  },
+  {
+    id: 2,
+    label: Strings.menu.about,
+  },
+  {
+    id: 3,
+    label: Strings.menu.product,
+  },
+  {
+    id: 4,
+    label: Strings.menu.contact,
+  },
+];
+
 const DropNav = ({ closeNav }: dropNav) => {
-  const menu = [
-    {
-      id: 1,
-      label: Strings.menu.home,
-    },
-    {
-      id: 2,
-      label: Strings.menu.about,
-    },
-    {
-      id: 3,
-      label: Strings.menu.product,
-    },
-    {
-      id: 4,
-      label: Strings.menu.contact,
-    },
-  ];
   return (
     <div className="w-full h-full bg-white p-8">
       <div className="flex-col gap-6 justify-center items-center w-full mx-auto md:w-8/12 md:pt-8 ">

@@ -1,18 +1,12 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { Montserrat } from "next/font/google";
 import { Bars3Icon, UserCircleIcon, UserIcon } from "@heroicons/react/20/solid";
 import SideNav from "./dropnav";
 import Strings from "../../utils/constants/strings";
 import SocialMediaComponents from "./socialmedia";
 import { splitStringIntoTwo } from "../../utils/helpers/helpers";
 
-type NavbarProps = {
-  isLoggedIn: boolean;
-};
-
-const Navbar = ({ isLoggedIn }: NavbarProps) => {
+const Navbar = ({ isLoggedIn }: NavigationProps) => {
   const right_nav: string[] = splitStringIntoTwo(Strings.general.right_nav);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isTopPage, setIsTopPage] = useState<boolean>(false);
@@ -89,7 +83,7 @@ const Navbar = ({ isLoggedIn }: NavbarProps) => {
             : "bg-white md:bg-white md:bg-opacity-70 drop-shadow-md  md:drop-shadow-none"
         } ${
           !isOpen && scrollingDown
-            ? "md:max-h-[0] md:py-0 md:border-transparent "
+            ? "md:max-h-[0] md:py-0 md:border-transparent border-0 "
             : "md:max-h-[100px] md:py-4 md:border-black bg-white bg-opacity-70 "
         }
           `}

@@ -1,18 +1,11 @@
+import { IShowcase } from "@/interfaces/products";
 import Strings from "@/utils/constants/strings";
 import { formatToIDR } from "@/utils/helpers/helpers";
 import React, { FC } from "react";
 
-export interface IShowcase {
-  id: number;
-  alt: string;
-  name: string;
-  price: number;
-  isSale: boolean;
-}
-
 const Showcase: FC<IShowcase> = ({ alt, id, name, price, isSale }) => {
   return (
-    <div className="relative flex flex-col gap-5  lg:w-[250px]  group transition-all ease-in-out duration-500 hover:-mt-3 hover:brightness-105 ">
+    <div className="relative flex flex-col gap-5  lg:w-[250px] backface-invisible  group transition-all ease-in-out duration-500 hover:-mt-3 hover:brightness-105 ">
       <p className="absolute bottom-14 left-[220px] xs:left-[270px] [writing-mode:vertical-lr] tracking-[0.4rem] text-xs group-hover:tracking-[0.6rem]  transition-all ease-in-out duration-500">
         {Strings.general.title}
       </p>
