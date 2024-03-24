@@ -1,10 +1,13 @@
 import React, { FC } from "react";
-import Swipers from "../swiper/swiper";
 import Strings from "@/utils/constants/strings";
+import ReviewSwiper from "../swipers/review/swiper";
 
 const Reviews: FC<{ data: FloristReview[] }> = ({ data }) => {
   return (
-    <div className=" sm:px-8 md:px-10 sm:pt-8">
+    <div
+      id={Strings.menu.rng}
+      className=" sm:px-8 md:px-10 sm:pt-8  pt-32 md:pt-32 "
+    >
       <div className="flex gap-3 md:gap-5 lg:gap-2 w-full justify-between items-center px-12 sm:px-10">
         <div className="flex-grow xs:w-4/12 md:w-5/12">
           <div className="w-full h-[1px] bg-black ml-auto transition-all ease-in-out duration-1000 group-hover:w-full"></div>
@@ -17,7 +20,7 @@ const Reviews: FC<{ data: FloristReview[] }> = ({ data }) => {
         </div>
       </div>
       <div className="py-5">
-        <Swipers data={data} />
+        <ReviewSwiper data={data} />
       </div>
       <div className="flex gap-3 md:gap-5 lg:gap-2 w-full justify-between items-center sm:px-10">
         <div className="w-2/12 ml-auto">

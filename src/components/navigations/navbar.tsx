@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Bars3Icon, UserCircleIcon, UserIcon } from "@heroicons/react/20/solid";
-import SideNav from "./dropnav";
+import DropNav from "./dropnav";
 import Strings from "../../utils/constants/strings";
 import SocialMediaComponents from "./socialmedia";
 import { splitStringIntoTwo } from "../../utils/helpers/helpers";
@@ -70,7 +70,9 @@ const Navbar = ({ isLoggedIn }: NavigationProps) => {
         {isLoggedIn ? (
           <UserCircleIcon className="w-6 h-6" />
         ) : (
-          <UserIcon className="w-6 h-6" />
+          <a href={`#${Strings.menu.contact}`}>
+            <UserIcon className="w-6 h-6" />
+          </a>
         )}
       </div>
       <div
@@ -139,12 +141,12 @@ const Navbar = ({ isLoggedIn }: NavigationProps) => {
       >
         <div
           id="dropdown"
-          className={`flex flex-col justify-center gap-5 absolute left-0  h-full w-full bg-white z-[110] transition-all ease-in-out duration-500 px-4 py-[60px] md:py-[120px] ${
+          className={`flex flex-col justify-center gap-5 absolute left-0  h-full w-full bg-white z-[110] transition-all ease-in-out duration-500 px-4 py-[60px] md:pt-[120px] ${
             isOpen ? "top-0" : "top-[-999px]"
           }`}
         >
           <div>
-            <SideNav closeNav={toggleNav} />
+            <DropNav closeNav={toggleNav} />
           </div>
         </div>
       </div>

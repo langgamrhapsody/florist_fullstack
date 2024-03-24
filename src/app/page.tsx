@@ -99,7 +99,7 @@ export default function LandingPage() {
   return (
     <>
       <Navbar isLoggedIn={isLoggedIn} />
-      <div className="flex flex-col gap-12  lg:max-w-[1400px]  m-auto">
+      <div className="  lg:max-w-[1400px]  m-auto">
         <Home />
         <Products showcaseItems={showcaseItems} />
         <About />

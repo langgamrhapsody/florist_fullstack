@@ -7,7 +7,10 @@ const Leaderboards: FC<{ heads: string[]; data: LeaderboardData[] }> = ({
   heads,
 }) => {
   return (
-    <div className="flex flex-col px-0 sm:px-8 md:px-10 sm:py-8 ">
+    <div
+      id={Strings.menu.membership}
+      className="flex flex-col px-0 sm:px-8 md:px-10 sm:py-8  pt-32 md:pt-32 "
+    >
       <div className=" p-[32px] sm:p-[40px] lg:p-[80px] flex flex-col gap-3 sm:gap-5  bg-secondary">
         <h3 className=" text-3xl md:text-5xl font-light text-center text-balance">
           {Strings.general.join}

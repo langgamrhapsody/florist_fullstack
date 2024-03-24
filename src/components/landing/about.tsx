@@ -4,7 +4,10 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className=" flex flex-col px-0 md:px-10 sm:py-8 ">
+    <div
+      id={Strings.menu.about}
+      className=" flex flex-col px-0 md:px-10 sm:py-8   pt-32 md:pt-32 "
+    >
       <div className="  flex flex-col md:flex-row px-12 sm:px-16 md:px-10 gap-10 md:gap-0 place-items-center">
         <div className="w-full md:w-1/2">
           <img src="/assets/img/about.jpg" alt="home.jpg" className="w-full" />

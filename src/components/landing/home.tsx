@@ -6,7 +6,10 @@ import flower from "../lottie/Flower.json";
 
 const Home = () => {
   return (
-    <div className=" pt-[60px] md:pt-[40px] 2xl:pt-[60px] flex flex-col-reverse md:flex-row px-12 sm:px-16 md:px-10 gap-10 md:gap-0 place-items-center">
+    <div
+      id={Strings.menu.home}
+      className=" pt-[60px] md:pt-[40px] 2xl:pt-[60px] flex flex-col-reverse md:flex-row px-12 sm:px-16 md:px-10 gap-10 md:gap-0 place-items-center"
+    >
       <div className="w-full md:w-1/2 -mb-10">
         <p className=" text-2xl leading-relaxed lg:text-[2.5rem] text-balance px-4 text-center -mb-10">
           {Strings.general.home_st}

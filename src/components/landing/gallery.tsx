@@ -3,7 +3,7 @@ import React from "react";
 
 const Gallery = () => {
   return (
-    <div className=" sm:px-8 md:px-10 sm:pb-8">
+    <div className=" sm:px-8 md:px-10 ">
       <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 place-items-center justify-between pb-8 px-12 sm:px-10 gap-4">
         {Array.from({ length: 6 }).map((_, index) => (
           <div

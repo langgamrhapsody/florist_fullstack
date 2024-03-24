@@ -1,6 +1,11 @@
 import React, { FC } from "react";
 
-const ReviewSwiper: FC<FloristReview> = ({ author, rating, review, title }) => {
+const ReviewSwiperItem: FC<FloristReview> = ({
+  author,
+  rating,
+  review,
+  title,
+}) => {
   return (
     <div className="max-w-[80%] md:max-w-full mx-auto">
       <h2 className="text-2xl md:text-3xl font-normal text-center text-balance mb-3">
@@ -16,4 +21,4 @@ const ReviewSwiper: FC<FloristReview> = ({ author, rating, review, title }) => {
   );
 };
 
-export default ReviewSwiper;
+export default ReviewSwiperItem;

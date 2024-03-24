@@ -9,7 +9,7 @@ export type AuthInputType = {
   handleChange: (e: string | ChangeEvent<any>) => void;
 };
 
-export type loginData = {
+export type AuthData = {
   email: string;
   password: string;
 };

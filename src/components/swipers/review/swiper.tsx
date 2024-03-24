@@ -5,9 +5,9 @@ import "swiper/css/pagination";
 import React, { FC } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import ReviewSwiper from "./reviewSwiper";
+import ReviewSwiperItem from "./reviewSwiperItem";
 
-const Swipers: FC<{ data: FloristReview[] }> = ({ data }) => {
+const ReviewSwiper: FC<{ data: FloristReview[] }> = ({ data }) => {
   const datas = data;
 
   const middleIndex = Math.floor((datas.length - 1) / 2);
@@ -26,13 +26,15 @@ const Swipers: FC<{ data: FloristReview[] }> = ({ data }) => {
       grabCursor={true}
       watchSlidesProgress={true}
       parallax={true}
-      modules={[Pagination, Autoplay]}
+      modules={[Pagination]}
       initialSlide={middleIndex}
+      onSlideChange={(swiper) => console.log("slide change", swiper)}
+      onSwiper={(swiper) => console.log(swiper)}
     >
       {datas.map((item, index) => {
         return (
           <SwiperSlide key={index}>
-            <ReviewSwiper
+            <ReviewSwiperItem
               author={item.author}
               rating={item.rating}
               review={item.review}
@@ -45,4 +47,4 @@ const Swipers: FC<{ data: FloristReview[] }> = ({ data }) => {
   );
 };
 
-export default Swipers;
+export default ReviewSwiper;
